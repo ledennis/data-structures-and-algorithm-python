@@ -1,4 +1,5 @@
 from random import randrange, choice, randint
+import math
 
 # R-1.1
 
@@ -171,3 +172,92 @@ assert(dot_products(a, b) == [1,4,9])
 # c = [1,2,3]
 # d = [1,2]
 # e = dot_products(c,d) # Raises ValueError exception.
+
+# C-1.23
+
+def do_not_out_bound(data, i):
+    try:
+        print(data[i])
+    except IndexError:
+        print("Don't try buffer overflow attacks in Python!")
+
+bounded=[1,2,3]
+# do_not_out_bound(bounded,3) # Don't try buffer overflow attacks in Python!
+
+# C-1.24
+
+def count_vowels(string):
+    vowels = {'a', 'e', 'i', 'o', 'u'}
+    count = 0
+    for i in string:
+        if i in vowels:
+            count += 1
+    return count
+
+string = 'alphabet'
+assert(count_vowels(string) == 3)
+
+# C-1.25
+
+def punc_out(string):
+    punctuation = {',', '.', '!', '?'}
+    unpunc = ''
+    for i in string:
+        if i not in punctuation:
+            unpunc += i
+    return unpunc
+
+sentence = 'Hello, my name is Boop?'
+assert(punc_out(sentence) == 'Hello my name is Boop')
+
+# C-1.26
+
+def formula(a, b, c):
+    sum = lambda x,y: x + y
+    subtr = lambda x,y: x - y
+    mult = lambda x,y: x * y
+    div = lambda x,y: x / y
+    arithmetic = {sum, subtr, mult, div}
+
+    for i in arithmetic:
+        if i(a,b) == c or i(b,c) == a:
+            return True
+    return False
+
+a = {3, 9, 2, 10}
+b = {6, 6, 4, 2}
+c = {9, 3, 8, 5}
+
+assert(formula(a[i], b[i], c[i]) == True for i in range(0, 4))
+assert(formula(c[i], b[i], a[i]) == True for i in range(0, 4))
+
+d = 3
+e = 5
+f = 4
+
+assert(formula(d,e,f) == False)
+
+# C-1.27
+
+def factors(n):
+    k = 1
+    pair = []
+    while k * k < n:
+        if n % k == 0:
+            yield k
+            pair = [k] + pair
+        k += 1
+    if k * k == n:
+        yield k
+    for i in pair:
+        yield n // i
+
+# C-1.28
+
+def norm(v, p = 2):
+    sum = 0
+    for i in v:
+        sum += pow(i, p)
+    return math.sqrt(sum)
+
+assert(norm([3,4]) == 5)
