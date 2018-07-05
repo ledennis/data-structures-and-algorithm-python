@@ -12,6 +12,7 @@ class Calculator:
         calc = self.operate(firstInput, secondInput, thirdInput)
         op = self.opInput()
         while (op != '='):
+            print(calc)
             num = self.numInput()
             calc = self.operate(calc, op, num)
             op = self.opInput()
