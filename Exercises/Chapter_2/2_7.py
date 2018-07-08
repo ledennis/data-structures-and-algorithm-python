@@ -144,6 +144,14 @@ class Vector:
             result[j] = self[j] - other[j]
         return result
 
+    # R-2.10
+    def __neg__(self):
+        """ Return inverse of vector. """
+        result = Vector(len(self))
+        for j in range(len(self)):
+            result[j] = self[j] * -1
+        return result
+
     def __eq__(self, other):
         return self._coords == other._coords
 
@@ -211,3 +219,8 @@ if __name__ == '__main__':
     w = Vector(5)
     w[0], w[1], w[2], w[3], w[4] = -1, -2, -3, -4, -5
     assert(u == w)
+
+    # R-2.10
+    y = Vector(5)
+    y[0], y[1], y[2], y[3], y[4] = 1, 2, 3, 4, 5
+    assert(-y == w)
