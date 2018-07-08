@@ -53,7 +53,7 @@ class Flower:
 class CreditCard:
     """ A consumer credit card. pg 70. """
 
-    def __init__(self, customer, bank, acnt, limit):
+    def __init__(self, customer, bank, acnt, limit, balance = 0):
         """ Create a new credit card instance.
 
         The initial balance is zero.
@@ -68,7 +68,8 @@ class CreditCard:
         self._bank = bank
         self._acnt = acnt
         self._limit = limit
-        self._balance = 0
+        # R-2.7
+        self._balance = balance
 
     def get_customer(self):
         return self._customer
@@ -142,3 +143,7 @@ if __name__ == '__main__':
         assert(False)
     except ValueError:
         assert(True)
+
+    # R-2.7
+    wells = CreditCard('Kat', 'Fargo', '4312 1234 4312 1234', 5000, 10000)
+    assert(wells.get_balance() == 10000)
