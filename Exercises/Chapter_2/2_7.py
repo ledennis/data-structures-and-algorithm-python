@@ -161,6 +161,9 @@ class Vector:
     def __str__(self):
         return '<' + str(self._coords)[1:-1] + '>'
 
+# R-2.11
+# Define __radd__ so that you can add a list to a vector with the list being on the left hand side.
+
 
 if __name__ == '__main__':
     # R-2.4
