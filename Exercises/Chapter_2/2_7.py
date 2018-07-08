@@ -50,4 +50,18 @@ class Flower:
         self._price = price
 
 
-if __name__ == '__main__'
+if __name__ == '__main__':
+    redFlower = Flower('red', 12, 4)
+
+    # Getters
+    assert(redFlower.get_name() == 'red')
+    assert(redFlower.get_num_petals() == 12)
+    assert(redFlower.get_price() == 4)
+
+    # Setters
+    redFlower.set_name('blue')
+    assert(redFlower.get_name() == 'blue')
+    redFlower.set_num_petals(24)
+    assert(redFlower.get_num_petals() == 24)
+    redFlower.set_price(8)
+    assert(redFlower.get_price() == 8)
