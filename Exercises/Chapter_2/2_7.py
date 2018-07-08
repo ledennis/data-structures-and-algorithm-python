@@ -162,6 +162,16 @@ class Vector:
             result[j] = self[j] * other[j]
         return result
 
+    # R-2.13
+    def __rmul__(self, other):
+        """ Return mul of two vectors. """
+        if len(self) != len(other):
+            raise ValueError('dimensions must agree')
+        result = Vector(len(self))
+        for j in range(len(self)):
+            result[j] = self[j] * other[j]
+        return result
+
     def __eq__(self, other):
         return self._coords == other._coords
 
@@ -243,3 +253,7 @@ if __name__ == '__main__':
     a = Vector(5)
     a[0], a[1], a[2], a[3], a[4] = -1, -4, -9, -16, -25
     assert(z == a)
+
+    # R-2.13
+    b = [-1, -1, -1, -1, -1] * a
+    assert(b == -a)
