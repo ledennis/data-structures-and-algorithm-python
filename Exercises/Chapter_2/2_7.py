@@ -109,6 +109,50 @@ class CreditCard:
             raise ValueError('Negative payment not allowed.')
         self._balance -= amount
 
+# R-2.9
+class Vector:
+    """ Represent a vector in a multidimensional space. pg. 78 """
+
+    def __init__(self, d):
+        self._coords = [0] * d
+
+    def __len__(self):
+        return len(self._coords)
+
+    def __getitem__(self, j):
+        return self._coords[j]
+
+    def __setitem__(self, j, val):
+        self._coords[j] = val
+
+    def __add__(self, other):
+        """ Return sum of two vectors. """
+        if len(self) != len(other):
+            raise ValueError('dimensions must agree')
+        result = Vector(len(self))
+        for j in range(len(self)):
+            result[j] = self[j] + other[j]
+        return result
+
+    # R-2.9
+    def __sub__(self, other):
+        """ Return diff of two vectors. """
+        if len(self) != len(other):
+            raise ValueError('dimensions must agree')
+        result = Vector(len(self))
+        for j in range(len(self)):
+            result[j] = self[j] - other[j]
+        return result
+
+    def __eq__(self, other):
+        return self._coords == other._coords
+
+    def __ne__(self, other):
+        return not self == other
+
+    def __str__(self):
+        return '<' + str(self._coords)[1:-1] + '>'
+
 
 if __name__ == '__main__':
     # R-2.4
@@ -160,3 +204,10 @@ if __name__ == '__main__':
         wallet[2].charge(3*val)
 
     assert(wallet[2].charge(3*116) == False)
+
+    # R-2.9
+    v = Vector(5)
+    u = v - [1, 2, 3, 4, 5]
+    w = Vector(5)
+    w[0], w[1], w[2], w[3], w[4] = -1, -2, -3, -4, -5
+    assert(u == w)
