@@ -147,3 +147,16 @@ if __name__ == '__main__':
     # R-2.7
     wells = CreditCard('Kat', 'Fargo', '4312 1234 4312 1234', 5000, 10000)
     assert(wells.get_balance() == 10000)
+
+    # R-2.8
+    wallet = []
+    wallet.append(CreditCard('John Bowman', 'California Savings', '1234 1234 1234 1234', 2500))
+    wallet.append(CreditCard('John Bowman', 'California Federal', '1234 4567 1234 1234', 3500))
+    wallet.append(CreditCard('John Bowman', 'California Finance', '1234 1234 7890 1234', 5000))
+
+    for val in range(100, 116):
+        wallet[0].charge(val)
+        wallet[1].charge(2*val)
+        wallet[2].charge(3*val)
+
+    assert(wallet[2].charge(3*116) == False)
