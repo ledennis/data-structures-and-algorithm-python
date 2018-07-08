@@ -102,6 +102,10 @@ class CreditCard:
 
     def make_payment(self, amount):
         """ Process customer payment that reducces balance. """
+
+        # R-2.6
+        if (amount < 0):
+            raise ValueError('Negative payment not allowed.')
         self._balance -= amount
 
 
@@ -128,6 +132,13 @@ if __name__ == '__main__':
     chase.charge(500)
     try:
         chase.charge('cookies')
+        assert(False)
+    except ValueError:
+        assert(True)
+
+    # R-2.6
+    try:
+        chase.make_payment(-789)
         assert(False)
     except ValueError:
         assert(True)
