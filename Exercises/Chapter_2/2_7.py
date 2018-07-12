@@ -244,6 +244,9 @@ class Vector:
 # R-2.18
 # FibonaciProgression(2,2).print_progression(8)
 
+# R-2.19
+# Since 2^7 = 128, it will take 9 calls to get 2^63.
+
 if __name__ == '__main__':
     # R-2.4
     redFlower = Flower('red', 12, 4)
