@@ -247,6 +247,12 @@ class Vector:
 # R-2.19
 # Since 2^7 = 128, it will take 9 calls to get 2^63.
 
+# R-2.20
+# Some potential disadvantages would be that with deep nested classes would be:
+# 1. Readability - Harder to understand subclasses the deeper it gets.
+# 2. Maintanence - Hard to keep track of class functions.
+# 3. Performance - Will have to call each constructor of parent classes, may be unnecessay in the context of program.
+
 if __name__ == '__main__':
     # R-2.4
     redFlower = Flower('red', 12, 4)
