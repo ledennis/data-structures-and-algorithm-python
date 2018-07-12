@@ -205,6 +205,42 @@ class Vector:
 # max(0, (length + step - 1) // step), where length = stop - start
 # Third, since range is exclusive of the stop, step - 1 // step will remove the stop as an element.
 
+# R-2.17
+"""
+    class Goat(object):
+        instance variables:
+            _tail
+        methods:
+            milk()
+            jump()
+
+    class Pig(object):
+        instance variables:
+            _nose
+        methods:
+            eat(food)
+            wallow()
+
+    class Horse(object):
+        instance variables:
+            _height
+            _color
+        methods:
+            run()
+            jump()
+
+    class Equestrian(Horse):
+        instance variables:
+            _height     # inherited from Horse
+            _color      # inherited from Horse
+            _weight
+        methods:
+            run()       # inherited from Horse
+            jump()      # inherited from Horse
+            trot()
+            is_trained()
+"""
+
 if __name__ == '__main__':
     # R-2.4
     redFlower = Flower('red', 12, 4)
