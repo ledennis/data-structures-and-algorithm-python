@@ -241,6 +241,9 @@ class Vector:
             is_trained()
 """
 
+# R-2.18
+# FibonaciProgression(2,2).print_progression(8)
+
 if __name__ == '__main__':
     # R-2.4
     redFlower = Flower('red', 12, 4)
