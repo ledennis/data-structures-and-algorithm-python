@@ -114,7 +114,15 @@ class Vector:
     """ Represent a vector in a multidimensional space. pg. 78 """
 
     def __init__(self, d):
-        self._coords = [0] * d
+        try:
+            self._coords = [0] * len(d)
+            for i in range(0, len(d)):
+                self._coords[i] = d[i]
+        except TypeError:
+            try:
+                self._coords = [0] * d
+            except TypeError:
+                raise TypeError('Wrong type')
 
     def __len__(self):
         return len(self._coords)
@@ -152,15 +160,21 @@ class Vector:
             result[j] = self[j] * -1
         return result
 
-    # R-2.12
+    # R-2.12 && R-2.14
     def __mul__(self, other):
-        """ Return mul of two vectors. """
-        if len(self) != len(other):
-            raise ValueError('dimensions must agree')
-        result = Vector(len(self))
-        for j in range(len(self)):
-            result[j] = self[j] * other[j]
-        return result
+        """ Return mul of two vectors or mul each coord by num if num is int """
+        if isinstance(other, int):
+            result = Vector(len(self))
+            for j in range(len(self)):
+                result[j] = self[j] * other
+            return result
+        else:
+            if len(self) != len(other):
+                raise ValueError('dimensions must agree')
+            result = Vector(len(self))
+            for j in range(len(self)):
+                result[j] = self[j] * other[j]
+            return result
 
     # R-2.13
     def __rmul__(self, other):
@@ -249,11 +263,23 @@ if __name__ == '__main__':
     assert(-y == w)
 
     # R-2.12
-    z = y * w
-    a = Vector(5)
-    a[0], a[1], a[2], a[3], a[4] = -1, -4, -9, -16, -25
-    assert(z == a)
+    h = y * 2
+    i = Vector(5)
+    i[0], i[1], i[2], i[3], i[4] = 2, 4, 6, 8, 10
+    assert(h == i)
 
     # R-2.13
+    a = Vector(5)
+    a[0], a[1], a[2], a[3], a[4] = -1, -4, -9, -16, -25
     b = [-1, -1, -1, -1, -1] * a
     assert(b == -a)
+
+    # R-2.14
+    z = y * w
+    assert(z == a)
+
+    # R-2.15
+    m = Vector([4, 7 ,5])
+    n = Vector(3)
+    n[0], n[1], n[2] = 4, 7, 5
+    assert(m == n)
