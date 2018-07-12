@@ -198,6 +198,12 @@ class Vector:
 # R-2.11
 # Define __radd__ so that you can add a list to a vector with the list being on the left hand side.
 
+# R-2.16
+# max(0, (stop - start + step - 1) // step)
+# First off, the zero is for if the start, stop, and step does not make sense, and returns a negative value.
+# Second, the formula subtracts the start from stop, which is then equal to the length between the two.
+# max(0, (length + step - 1) // step), where length = stop - start
+# Third, since range is exclusive of the stop, step - 1 // step will remove the stop as an element.
 
 if __name__ == '__main__':
     # R-2.4
@@ -283,3 +289,7 @@ if __name__ == '__main__':
     n = Vector(3)
     n[0], n[1], n[2] = 4, 7, 5
     assert(m == n)
+
+    print(1 // 2)
+
+    print(range(10,0, -2))
