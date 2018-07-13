@@ -48,3 +48,20 @@
             printPurchaseDate
 
 """
+# C-2.25 Implemented in Reinforcemnet.py.
+"""
+    # R-2.12 && R-2.14
+    def __mul__(self, other):
+        if isinstance(other, int):
+            result = Vector(len(self))
+            for j in range(len(self)):
+                result[j] = self[j] * other
+            return result
+        else:
+            if len(self) != len(other):
+                raise ValueError('dimensions must agree')
+            result = Vector(len(self))
+            for j in range(len(self)):
+                result[j] = self[j] * other[j]
+            return result
+"""
