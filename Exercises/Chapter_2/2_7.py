@@ -248,10 +248,16 @@ class Vector:
 # Since 2^7 = 128, it will take 9 calls to get 2^63.
 
 # R-2.20
-# Some potential disadvantages would be that with deep nested classes would be:
+# Some potential disadvantages would be that with deep inherited trees would be:
 # 1. Readability - Harder to understand subclasses the deeper it gets.
 # 2. Maintanence - Hard to keep track of class functions.
 # 3. Performance - Will have to call each constructor of parent classes, may be unnecessay in the context of program.
+
+# R-2.21
+# Some potential disadvantages of shallow inherited trees:
+# 1. Cleaniness - Maybe it would be better to go deeper to seperate code/functionality.
+# 2. Adaptability - Should be able to build subclasses to support inheritance.
+# 3. Maintanence - If there are that many subclasses, maybe it needs refactoring to build a better base class.
 
 if __name__ == '__main__':
     # R-2.4
