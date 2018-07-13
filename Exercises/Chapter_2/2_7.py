@@ -259,15 +259,25 @@ class Vector:
 # 2. Adaptability - Should be able to build subclasses to support inheritance.
 # 3. Maintanence - If there are that many subclasses, maybe it needs refactoring to build a better base class.
 
-# R-2.22
+# R-2.22 && R-2.23
 """
     def __eq__(self, other):
         if len(self) != len(other):
-            return False
+            raise ValueError('Must be equal length')
         for i in range(0, len(self)):
             if self[i] != other[i]:
                 return False
         return True
+
+    def __lt__(self, other):
+        if len(self) != len(other):
+            raise ValueError('Must be equal length')
+        for i in range(0, len(self)):
+            if self[i] < other[i]:
+                return True
+            elif self[i] > other[i]:
+                return False
+        return False
 """
 
 if __name__ == '__main__':
