@@ -259,6 +259,17 @@ class Vector:
 # 2. Adaptability - Should be able to build subclasses to support inheritance.
 # 3. Maintanence - If there are that many subclasses, maybe it needs refactoring to build a better base class.
 
+# R-2.22
+"""
+    def __eq__(self, other):
+        if len(self) != len(other):
+            return False
+        for i in range(0, len(self)):
+            if self[i] != other[i]:
+                return False
+        return True
+"""
+
 if __name__ == '__main__':
     # R-2.4
     redFlower = Flower('red', 12, 4)
