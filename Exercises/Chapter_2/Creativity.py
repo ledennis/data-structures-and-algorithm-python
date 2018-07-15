@@ -99,6 +99,35 @@ class ReverseSequenceIterator:
     def __iter__(self):
         return self
 
+# C-2.28
+class Range:
+    def __init__(self, start, stop=None, step=1):
+        if step == 0:
+            raise ValueError('step cannot be 0')
+
+        if stop is None:
+            start, stop = 0, start
+
+        self._length = max(0, (stop - start + step - 1) // step)
+
+        self._start = start
+        self._step = step
+
+    def __len__(self):
+        return self._length
+
+    def __getitem__(self, k):
+        if k < 0:
+            k += len(self)
+
+        if not 0 <= k < self._length:
+            raise IndexError('index out of range.')
+
+        return self._start + k * self._step
+
+    def __contains__(self, k):
+        return k < self._length
+
 if __name__ == '__main__':
     # C-2.26
     seq = [1,2,3,4,5]
@@ -107,4 +136,6 @@ if __name__ == '__main__':
     for i in range(0, 5):
         assert(next(revIt) == seq[len(seq) - 1 - i])
 
-    
+    # C-2.28
+    print(2 in Range(2000000))
+    print(2000000 in Range(2000000))
