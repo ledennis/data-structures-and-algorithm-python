@@ -228,6 +228,36 @@ class PredatoryCreditCard(CreditCard):
         super().make_payment(amout)
         self._monthly_fee -= amount
 
+# C-2.31
+class Progression:
+    def __init__(self, start=0):
+        self._current = start
+
+    def _advance(self):
+        self._current += 1
+
+    def __next__(self):
+        if self._current is None:
+            raise StopIteration()
+        else:
+            answer = self._current
+            self._advance()
+            return answer
+
+    def __iter__(self):
+        return self
+
+    def print_progression(self, n):
+        print(' '.join(str(next(self)) for j in range(n)))
+
+class AbsDiffProgression(Progression):
+    def __init__(self, first=2, second=200):
+        super().__init__(first)
+        self._prev = second - first
+
+    def _advance(self):
+        self._prev, self._current = self._current, abs(self._prev - self._current)
+
 
 if __name__ == '__main__':
     # C-2.26
@@ -246,9 +276,11 @@ if __name__ == '__main__':
     pred = PredatoryCreditCard('Bob', 'Chase', '1234123412341234', 5000, .0825)
     for i in range(0,15):
         pred.charge(50)
-    print(pred.get_balance())
     pred.process_month()
-    print(pred.get_balance())
-    print(pred.get_monthly_fee())
     pred.process_month()
-    print(pred.get_balance())
+
+    # C-2.31
+    adp = AbsDiffProgression()
+    seq = [2, 196, 194, 2, 192, 190, 2, 188, 186, 2]
+    for i in range(len(seq)):
+        assert(next(adp) == seq[i])
