@@ -228,7 +228,7 @@ class PredatoryCreditCard(CreditCard):
         super().make_payment(amout)
         self._monthly_fee -= amount
 
-# C-2.31
+
 class Progression:
     def __init__(self, start=0):
         self._current = start
@@ -250,6 +250,7 @@ class Progression:
     def print_progression(self, n):
         print(' '.join(str(next(self)) for j in range(n)))
 
+# C-2.31
 class AbsDiffProgression(Progression):
     def __init__(self, first=2, second=200):
         super().__init__(first)
@@ -257,6 +258,14 @@ class AbsDiffProgression(Progression):
 
     def _advance(self):
         self._prev, self._current = self._current, abs(self._prev - self._current)
+
+# C-2.32
+class SquareRootProgression(Progression):
+    def __init__(self, first=65536):
+        super().__init__(first)
+
+    def _advance(self):
+        self._current = pow(self._current, .5)
 
 
 if __name__ == '__main__':
@@ -284,3 +293,9 @@ if __name__ == '__main__':
     seq = [2, 196, 194, 2, 192, 190, 2, 188, 186, 2]
     for i in range(len(seq)):
         assert(next(adp) == seq[i])
+
+    # C-2.32
+    sqrp = SquareRootProgression()
+    seq = [65536, 256, 16, 4, 2]
+    for i in range(len(seq)):
+        assert(next(sqrp) == seq[i])
