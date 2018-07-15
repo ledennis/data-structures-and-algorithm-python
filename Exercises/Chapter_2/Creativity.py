@@ -128,6 +128,24 @@ class Range:
     def __contains__(self, k):
         return k < self._length
 
+# C-2.28
+"""
+    def __init__(self, customer, bank, acnt, limit, apr):
+        ...
+        self._monthly_charges = 0
+
+    def charge(self, price):
+        ...
+        self._monthly_charges += 1
+
+    def process_month(self):
+        if self._balance > 0:
+            monthly_factor = pow(1 + self._apr, 1/12)
+            self._balance *= monthly_factor
+        if self._monthly_charges > 10
+            self._balance += self._monthly_charges - 10
+"""
+
 if __name__ == '__main__':
     # C-2.26
     seq = [1,2,3,4,5]
