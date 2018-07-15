@@ -99,7 +99,7 @@ class ReverseSequenceIterator:
     def __iter__(self):
         return self
 
-# C-2.28
+# C-2.27
 class Range:
     def __init__(self, start, stop=None, step=1):
         if step == 0:
@@ -136,6 +136,6 @@ if __name__ == '__main__':
     for i in range(0, 5):
         assert(next(revIt) == seq[len(seq) - 1 - i])
 
-    # C-2.28
+    # C-2.27
     print(2 in Range(2000000))
     print(2000000 in Range(2000000))
