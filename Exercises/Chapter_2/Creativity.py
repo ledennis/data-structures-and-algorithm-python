@@ -128,7 +128,7 @@ class Range:
     def __contains__(self, k):
         return k < self._length
 
-# C-2.28 && C-2.29
+# C-2.28 && C-2.29 && C-2.30
 class CreditCard:
     """ A consumer credit card. pg 70. """
 
@@ -164,6 +164,9 @@ class CreditCard:
 
     def get_balance(self):
         return self._balance
+
+    def _set_balance(self, amount):
+        self._balance += amount
 
     def charge(self, price):
         """ Charge given price to the card, assuming sufficient credit limit.
@@ -202,14 +205,16 @@ class PredatoryCreditCard(CreditCard):
         self._monthly_charges += 1
 
     def process_month(self):
+        additions = 0
         if self._balance > 0:
             monthly_factor = pow(1 + self._apr, 1/12)
-            self._balance *= monthly_factor
+            additions *= monthly_factor
         if self._monthly_charges > 10:
-            self._balance += self._monthly_charges - 10
+            additions += self._monthly_charges - 10
         if self._monthly_fee > 0:
-            self._balance += 25
+            additions += 25
 
+        super()._set_balance(additions)
         self._monthly_charges = 0
         self.set_monthly_fee()
 
