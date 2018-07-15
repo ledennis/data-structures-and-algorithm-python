@@ -65,3 +65,46 @@
                 result[j] = self[j] * other[j]
             return result
 """
+
+# C-2.26
+"""
+class SequenceIterator:
+    def __init__(self, sequence):
+        self._seq = sequence
+        self._k = -1
+
+    def __next__(self):
+        self._k += 1
+        if self._k < len(self._seq):
+            return(self._seq[self._k])
+        else:
+            raise StopIteration()
+
+    def __iter__(self):
+        return self
+"""
+
+class ReverseSequenceIterator:
+    def __init__(self, sequence):
+        self._seq = sequence
+        self._k = len(sequence)
+
+    def __next__(self):
+        self._k -= 1
+        if self._k in range(0, len(self._seq)):
+            return(self._seq[self._k])
+        else:
+            raise StopIteration()
+
+    def __iter__(self):
+        return self
+
+if __name__ == '__main__':
+    # C-2.26
+    seq = [1,2,3,4,5]
+    revIt = ReverseSequenceIterator(seq)
+
+    for i in range(0, 5):
+        assert(next(revIt) == seq[len(seq) - 1 - i])
+
+    
