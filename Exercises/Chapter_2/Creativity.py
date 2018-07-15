@@ -128,32 +128,122 @@ class Range:
     def __contains__(self, k):
         return k < self._length
 
-# C-2.28
-"""
-    def __init__(self, customer, bank, acnt, limit, apr):
-        ...
-        self._monthly_charges = 0
+# C-2.28 && C-2.29
+class CreditCard:
+    """ A consumer credit card. pg 70. """
+
+    def __init__(self, customer, bank, acnt, limit, balance = 0):
+        """ Create a new credit card instance.
+
+        The initial balance is zero.
+
+        customer    the name of the customer
+        bank        the name of the bank
+        acnt        the acount identifier
+        limit       credit limit
+        """
+
+        self._customer = customer
+        self._bank = bank
+        self._acnt = acnt
+        self._limit = limit
+        # R-2.7
+        self._balance = balance
+
+    def get_customer(self):
+        return self._customer
+
+    def get_bank(self):
+        return self._bank
+
+    def get_acnt(self):
+        return self._acnt
+
+    def get_limit(self):
+        return self._limit
+
+    def get_balance(self):
+        return self._balance
 
     def charge(self, price):
-        ...
+        """ Charge given price to the card, assuming sufficient credit limit.
+
+        Return True if charge was processed; False if charge was denied.
+        """
+
+        if isinstance(price, int) or isinstance(price, float):
+            if price + self._balance > self._limit:
+                return False
+            else:
+                self._balance += price
+                return True
+        else:
+            raise ValueError('Can only charge with money.')
+
+    def make_payment(self, amount):
+        """ Process customer payment that reducces balance. """
+
+        # R-2.6
+        if (amount < 0):
+            raise ValueError('Negative payment not allowed.')
+        self._balance -= amount
+
+class PredatoryCreditCard(CreditCard):
+    def __init__(self, customer, bank, acnt, limit, apr):
+        super().__init__(customer, bank, acnt, limit)
+        self._apr = apr
+        self._monthly_charges = 0
+        self._monthly_fee = 0
+
+    def charge(self, price):
+        success = super().charge(price)
+        if not success:
+            self._balance += 5
         self._monthly_charges += 1
 
     def process_month(self):
         if self._balance > 0:
             monthly_factor = pow(1 + self._apr, 1/12)
             self._balance *= monthly_factor
-        if self._monthly_charges > 10
+        if self._monthly_charges > 10:
             self._balance += self._monthly_charges - 10
-"""
+        if self._monthly_fee > 0:
+            self._balance += 25
+
+        self._monthly_charges = 0
+        self.set_monthly_fee()
+
+    def set_monthly_fee(self):
+        self._monthly_fee = self._balance * .10
+
+    def get_monthly_fee(self):
+        return self._monthly_fee
+
+    def make_payment(self, amount):
+        super().make_payment(amout)
+        self._monthly_fee -= amount
+
 
 if __name__ == '__main__':
     # C-2.26
-    seq = [1,2,3,4,5]
-    revIt = ReverseSequenceIterator(seq)
-
-    for i in range(0, 5):
-        assert(next(revIt) == seq[len(seq) - 1 - i])
+    # seq = [1,2,3,4,5]
+    # revIt = ReverseSequenceIterator(seq)
+    #
+    # for i in range(0, 5):
+    #     assert(next(revIt) == seq[len(seq) - 1 - i])
 
     # C-2.27
-    print(2 in Range(2000000))
-    print(2000000 in Range(2000000))
+    a = 2 in Range(2000000)
+    assert(a == True)
+    b = 2000000 in Range(2000000)
+    assert(b == False)
+
+    pred = PredatoryCreditCard('Bob', 'Chase', '1234123412341234', 5000, .0825)
+    for i in range(0,15):
+        pred.charge(50)
+    print(pred.get_balance())
+    pred.process_month()
+    print(pred.get_balance())
+    print(pred.get_monthly_fee())
+    pred.process_month()
+    print(pred.get_balance())
