@@ -15,11 +15,11 @@ class River:
             self.turn()
 
     def turn(self):
-        """ Randomly determines if creatures in list should move. """
+        """ Randomly determines if creatures in list  move. """
         for index in range(len(self._river)):
             creature = self._river[index]
             if isinstance(creature, Creature):
-                if self.shouldMove():
+                if self.should_move():
                     newPos = creature.move(len(self._river))
                     self.place(creature, newPos)
         self.print_river()
@@ -69,7 +69,7 @@ class River:
         else:
             return -1
 
-    def shouldMove(self):
+    def should_move(self):
         """ Returns %50 chance of moving. """
         return randint(0,1) == 1
 
