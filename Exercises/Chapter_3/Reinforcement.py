@@ -44,3 +44,7 @@
 # R-3.11
 # if d(n) = O(f(n)) and e(n) is O(g(n)), then d(n) + e(n) is O(f(n) + g(n))
 # if O(f(n) + g(n)), then the bigger asymptoptic growth determines big Oh
+
+# R-3.12
+# if d(n) = O(f(n)) and e(n) is O(g(n)), then d(n) - e(n) is not necessarily O(f(n) - g(n))
+# If f(n) < g(n), then the big Oh is negative, which means that big Oh grows smaller as n increases, which can not be true.
