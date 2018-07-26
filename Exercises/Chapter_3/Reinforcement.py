@@ -62,3 +62,9 @@
 # f(n) <= cg(n) where c is a positive integer
 # g(n) >= cf(n) where c is a positive integer
 # Both are equal to each other
+
+# R-3.16
+# p(n) is a polynomial in n, then logp(n) is O(logn)
+# Not completely sure how to interpret this ...
+# Function p(n) is a polynomial in n, so p(n) = cn^d for some constant c and d?
+# log(cn^d) = log(c) + log(n^d) = log(c) + dlog(n) which is O(logn)
