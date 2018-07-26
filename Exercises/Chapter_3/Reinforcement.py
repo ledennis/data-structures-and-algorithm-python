@@ -56,3 +56,9 @@
 # R-3.14
 # O(max{f(n), g(n)}) = O(f(n) + g(n))
 # if O(f(n) + g(n)), then the bigger asymptoptic growth determines big Oh
+
+# R-3.15
+# f(n) = O(g(n)) if and only if g(n) = BigOmega(f(n))
+# f(n) <= cg(n) where c is a positive integer
+# g(n) >= cf(n) where c is a positive integer
+# Both are equal to each other
