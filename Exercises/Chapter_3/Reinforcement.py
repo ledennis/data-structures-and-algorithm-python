@@ -24,3 +24,8 @@
 # 2 + 4 + 6 ... + 2n
 # 2(1 + 2 + 3 ... n)
 # n(n+1)
+
+# R-3.7
+# (a) The running time of algorithm A is always O(f(n))
+# (b) In the worst case, the running time of algorithm A is O(f(n))
+# a implies b since A is always O(f(n)), which means that in the worst case, the running time is O(f(n)).
