@@ -29,3 +29,6 @@
 # (a) The running time of algorithm A is always O(f(n))
 # (b) In the worst case, the running time of algorithm A is O(f(n))
 # a implies b since A is always O(f(n)), which means that in the worst case, the running time is O(f(n)).
+
+# R-3.8
+# 2^10 < 2^logn == 4n == 3n + 100logn < 4nlogn + 2n == nlogn < n^2 + 10n < n^3 < 2^n
