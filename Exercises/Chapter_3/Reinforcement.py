@@ -32,3 +32,7 @@
 
 # R-3.8
 # 2^10 < 2^logn == 4n == 3n + 100logn < 4nlogn + 2n == nlogn < n^2 + 10n < n^3 < 2^n
+
+# R-3.9
+# if d(n) = O(f(n)), then ad(n) is O(f(n)) for any constant a > 0
+# since O(f(n)) is for asymptoptic growth to infinity, any positive coefficient to d(n) will be neglible as the function approaches infinity, so ad(n) is O(f(n)).
