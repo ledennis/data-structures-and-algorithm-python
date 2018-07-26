@@ -13,3 +13,7 @@
 # R-3.4
 # f(n) = n
 # A linear function will grow linearly on either a log-log scale or a standard scale.
+
+
+# R-3.5
+# Since log-log scales at an exponential base and c is the exponent of n^c, n^c will grow at a slope of c on a log-log scale.
