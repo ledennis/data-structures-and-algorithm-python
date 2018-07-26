@@ -36,3 +36,7 @@
 # R-3.9
 # if d(n) = O(f(n)), then ad(n) is O(f(n)) for any constant a > 0
 # since O(f(n)) is for asymptoptic growth to infinity, any positive coefficient to d(n) will be neglible as the function approaches infinity, so ad(n) is O(f(n)).
+
+# R-3.10
+# if d(n) = O(f(n)) and e(n) is O(g(n)), then d(n)e(n) is O(f(n)g(n))
+# Rule of productivity, O(f(n)) * O(g(n)) = O(f(n)g(n))
