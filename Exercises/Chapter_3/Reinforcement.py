@@ -17,3 +17,10 @@
 
 # R-3.5
 # Since log-log scales at an exponential base and c is the exponent of n^c, n^c will grow at a slope of c on a log-log scale.
+
+# R-3.6
+# Sum of all even numbers between 0 to 2n where n is a positive integer
+# Sum(2k) for when k = 1 .. 2n
+# 2 + 4 + 6 ... + 2n
+# 2(1 + 2 + 3 ... n)
+# n(n+1)
