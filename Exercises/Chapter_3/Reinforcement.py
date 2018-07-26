@@ -48,3 +48,7 @@
 # R-3.12
 # if d(n) = O(f(n)) and e(n) is O(g(n)), then d(n) - e(n) is not necessarily O(f(n) - g(n))
 # If f(n) < g(n), then the big Oh is negative, which means that big Oh grows smaller as n increases, which can not be true.
+
+# R-3.13
+# if d(n) = O(f(n)) and f(n) is O(g(n)), then d(n) is O(g(n))
+# since d(n) <= cf(n) and f(n) <= cg(n) where c is a positive integer, d(n) <= g(n), which means d(n) is O(g(n)).
