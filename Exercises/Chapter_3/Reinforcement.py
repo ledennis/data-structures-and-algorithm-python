@@ -40,3 +40,7 @@
 # R-3.10
 # if d(n) = O(f(n)) and e(n) is O(g(n)), then d(n)e(n) is O(f(n)g(n))
 # Rule of productivity, O(f(n)) * O(g(n)) = O(f(n)g(n))
+
+# R-3.11
+# if d(n) = O(f(n)) and e(n) is O(g(n)), then d(n) + e(n) is O(f(n) + g(n))
+# if O(f(n) + g(n)), then the bigger asymptoptic growth determines big Oh
