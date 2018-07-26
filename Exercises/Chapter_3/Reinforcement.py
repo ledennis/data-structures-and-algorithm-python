@@ -52,3 +52,7 @@
 # R-3.13
 # if d(n) = O(f(n)) and f(n) is O(g(n)), then d(n) is O(g(n))
 # since d(n) <= cf(n) and f(n) <= cg(n) where c is a positive integer, d(n) <= g(n), which means d(n) is O(g(n)).
+
+# R-3.14
+# O(max{f(n), g(n)}) = O(f(n) + g(n))
+# if O(f(n) + g(n)), then the bigger asymptoptic growth determines big Oh
