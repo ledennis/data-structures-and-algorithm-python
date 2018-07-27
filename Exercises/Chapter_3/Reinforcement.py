@@ -93,3 +93,14 @@
 # R-3.22
 # f(n) is O(f(n)) for when f(n) is greater than 1 and nondecreasing since
 # f(n) <= c(f(n)) for c > 0
+
+# R-3.23
+"""
+    def example1(S):
+        n = len(S)
+        total = 0
+        for j in range(n):
+            total += S[j]
+        return total
+"""
+# O(S) since the for loop is iterating over S elements
