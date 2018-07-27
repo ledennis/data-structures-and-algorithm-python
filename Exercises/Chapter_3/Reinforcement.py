@@ -89,3 +89,7 @@
 # R-3.21
 # Show that nlogn is big Omega(n)
 # nlogn >= cn for c > 0 as n appraches infinity
+
+# R-3.22
+# f(n) is O(f(n)) for when f(n) is greater than 1 and nondecreasing since
+# f(n) <= c(f(n)) for c > 0
