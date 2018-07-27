@@ -77,3 +77,7 @@
 # R-3.18
 # 2^(n+1) = O(2^n)
 # 2^n + 2^1 = O(2^n)
+
+# R-3.19
+# Show that n is O(nlogn)
+# n <= nlogn as N approaches infinity
