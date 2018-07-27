@@ -73,3 +73,7 @@
 # (n+1)^5 = O(n^5)
 # n^5 + 5n^4 + 10n^3 + 10n^2 + 5n + 1 = O(n^5)
 # Since n^5 is the hightest degree and is equal to O(n^5), they are equal.
+
+# R-3.18
+# 2^(n+1) = O(2^n)
+# 2^n + 2^1 = O(2^n)
