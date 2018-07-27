@@ -103,4 +103,15 @@
             total += S[j]
         return total
 """
-# O(S) since the for loop is iterating over S elements
+# Running Time:O(S) since the for loop is iterating over S elements
+
+# R-3.23
+"""
+    def example2(S):
+        n = len(S)
+        total = 0
+        for j in range(0, n, 2):
+            total += S[j]
+        return total
+"""
+# Running Time: O(S/2) = O(S) since the for loop is iterating over half of S elements
