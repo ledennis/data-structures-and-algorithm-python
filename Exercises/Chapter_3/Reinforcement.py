@@ -68,3 +68,8 @@
 # Not completely sure how to interpret this ...
 # Function p(n) is a polynomial in n, so p(n) = cn^d for some constant c and d?
 # log(cn^d) = log(c) + log(n^d) = log(c) + dlog(n) which is O(logn)
+
+# R-3.17
+# (n+1)^5 = O(n^5)
+# n^5 + 5n^4 + 10n^3 + 10n^2 + 5n + 1 = O(n^5)
+# Since n^5 is the hightest degree and is equal to O(n^5), they are equal.
