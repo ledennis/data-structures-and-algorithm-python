@@ -81,3 +81,7 @@
 # R-3.19
 # Show that n is O(nlogn)
 # n <= nlogn as N approaches infinity
+
+# R-3.20
+# Show that n^2 is Big Omega(nlogn)
+# n^2 >= cnlogn for c > 0
