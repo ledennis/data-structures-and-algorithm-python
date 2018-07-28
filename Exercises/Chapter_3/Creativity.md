@@ -21,3 +21,7 @@ Neither: f(n) = n^2 when n is even, therefore breaks O(n) since f(n) = n^2 > O(n
 ## C-3.38
 Show that summation of i=1 to n of i^2 is O(n^3)
 Since there are n elements, i to n, and n^2 operation for each n, this is O(n^3)
+
+## C-3.39
+Show that summation of i=1 to n of i/2^i is less than 2
+Since 1 / 2 = .5, as n approaches infinity, the summation approximates to 1, which is less than 2
