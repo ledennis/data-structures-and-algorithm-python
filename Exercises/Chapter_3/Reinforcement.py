@@ -128,15 +128,16 @@
 """
 # Running Time: O(n^2) since there are two for loops iterating over n elements in S
 
-# R-3.26
+# R-3.27
 """
-    def example4(S):
-        n = len(S)
-        prefix = 0
-        total = 0
+    def example5(A, B):
+        n = len(A)
+        count = 0
         for j in range(n):
-            prefix += S[j]
-            total += prefix
-        return total
+            for x in range(1 + j):
+                total += A[k]
+            if B[i] == total:
+                count += 1
+        return count
 """
-# Running Time: O(n) since there is one for loop iterating over n elements in S 
+# Running Time: O(n) since there is one for loop iterating over n elements in A, comparisons are O(1) time
