@@ -35,7 +35,7 @@ a implies b since A is always O(f(n)), which means that in the worst case, the r
 
 ## R-3.9
 if d(n) = O(f(n)), then ad(n) is O(f(n)) for any constant a > 0
-since O(f(n)) is for asymptoptic growth to infinity, any positive coefficient to d(n) will be neglible as the function approaches infinity, so ad(n) is O(f(n)).
+since O(f(n)) is for asymptotic growth to infinity, any positive coefficient to d(n) will be negligible as the function approaches infinity, so ad(n) is O(f(n)).
 
 ## R-3.10
 if d(n) = O(f(n)) and e(n) is O(g(n)), then d(n)e(n) is O(f(n)g(n))
@@ -43,7 +43,7 @@ Rule of productivity, O(f(n)) * O(g(n)) = O(f(n)g(n))
 
 ## R-3.11
 if d(n) = O(f(n)) and e(n) is O(g(n)), then d(n) + e(n) is O(f(n) + g(n))
-if O(f(n) + g(n)), then the bigger asymptoptic growth determines big Oh
+if O(f(n) + g(n)), then the bigger asymptotic growth determines big Oh
 
 ## R-3.12
 if d(n) = O(f(n)) and e(n) is O(g(n)), then d(n) - e(n) is not necessarily O(f(n) - g(n))
@@ -55,7 +55,7 @@ since d(n) <= cf(n) and f(n) <= cg(n) where c is a positive integer, d(n) <= g(n
 
 ## R-3.14
 O(max{f(n), g(n)}) = O(f(n) + g(n))
-if O(f(n) + g(n)), then the bigger asymptoptic growth determines big Oh
+if O(f(n) + g(n)), then the bigger asymptotic growth determines big Oh
 
 ## R-3.15
 f(n) = O(g(n)) if and only if g(n) = BigOmega(f(n))
@@ -72,7 +72,7 @@ log(cn^d) = log(c) + log(n^d) = log(c) + dlog(n) which is O(logn)
 ## R-3.17
 (n+1)^5 = O(n^5)
 n^5 + 5n^4 + 10n^3 + 10n^2 + 5n + 1 = O(n^5)
-Since n^5 is the hightest degree and is equal to O(n^5), they are equal.
+Since n^5 is the highest degree and is equal to O(n^5), they are equal.
 
 ## R-3.18
 2^(n+1) = O(2^n)
@@ -84,11 +84,11 @@ n <= nlogn as n approaches infinity
 
 ## R-3.20
 Show that n^2 is Big Omega(nlogn)
-n^2 >= cnlogn for c > 0 as n appraches infinity
+n^2 >= cnlogn for c > 0 as n approaches infinity
 
 ## R-3.21
 Show that nlogn is big Omega(n)
-nlogn >= cn for c > 0 as n appraches infinity
+nlogn >= cn for c > 0 as n approaches infinity
 
 ## R-3.22
 f(n) is O(f(n)) for when f(n) is greater than 1 and nondecreasing since
@@ -183,14 +183,14 @@ Worst case running time on Algorithm D = O(ni)
 ## R-3.33
 Al = O(nlogn)
 Bob = O(n^2)
-Al's algorithm is faster as n approches infinity but for small inputs of n, Bob's will be faster.
+Al's algorithm is faster as n approaches infinity but for small inputs of n, Bob's will be faster.
 We are mostly interested in Big O for the "big picture" scenarios, which is beneficial for creating algorithms that scale.
 
 ## R-3.34
 City with inhabitants who only enjoy a meal if it is the best meal they have had in their lives.
 Worst Case per Inhabitant: Only enjoy their first meal
 Best Case: Assuming an inhabitant eats 3 meals per day, and that each meal is the best they have ever had, with
-an average human lifespon of 79 years, a person will have 3 meals * 365 days * 79 years = 86,505 meal enjoyments.
+an average human lifespan of 79 years, a person will have 3 meals * 365 days * 79 years = 86,505 meal enjoyments.
 Average Case: Assuming a uniform distribution where each meal has a %50 chance of being the best meal, then
 on average there is 43,252.5 enjoyments, but if each meal has an equal chance to be worse, as good, better than the
 best meal, then there is 28,835 enjoyments.
