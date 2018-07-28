@@ -179,3 +179,9 @@
 # Algorithm D calls Algorithm E on each element S[i]
 # Algorithm E runs in O(i) time when called o element S[i]
 # Worst case running time on Algorithm D = O(ni)
+
+# R-3.33
+# Al = O(nlogn)
+# Bob = O(n^2)
+# Al's algorithm is faster as n approches infinity but for small inputs of n, Bob's will be faster.
+# We are mostly interested in Big O for the "big picture" scenarios, which is beneficial for creating algorithms that scale.
