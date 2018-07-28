@@ -163,3 +163,7 @@
 # R-3.29
 # Executes an O(logn) computation for each entry in n-element sequence
 # Worst-case running time = O(nlogn)
+
+# R-3.30
+# Executes O(n) time calculation for each on logn random elements S
+# Worst case running time = O(nlogn)
