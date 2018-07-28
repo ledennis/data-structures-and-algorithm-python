@@ -25,3 +25,10 @@ Since there are n elements, i to n, and n^2 operation for each n, this is O(n^3)
 ## C-3.39
 Show that summation of i=1 to n of i/2^i is less than 2
 Since 1 / 2 = .5, as n approaches infinity, the summation approximates to 1, which is less than 2
+
+## C-3.40
+log base b f(n) is bTheta(logf(n)) if b > 1 is a constant
+Prove logbf(n) is O(logf(n)) and bOmega(logf(n))
+Assuming logf(n) is log base 2, then logbf(n) where b = 1, is O(logf(n))
+Assuming logf(n) is log base 2, then logbf(n) where b = 3, is bOmega(logf(n))
+Therefore logbf(n) is bTheta(logf(n))
