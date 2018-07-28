@@ -95,29 +95,29 @@ f(n) is O(f(n)) for when f(n) is greater than 1 and nondecreasing since
 f(n) <= c(f(n)) for c > 0
 
 ## R-3.23
-"""
+```
     def example1(S):
         n = len(S)
         total = 0
         for j in range(n):
             total += S[j]
         return total
-"""
+```
 Running Time:O(n) since the for loop is iterating over n elements in S
 
 ## R-3.24
-"""
+```
     def example2(S):
         n = len(S)
         total = 0
         for j in range(0, n, 2):
             total += S[j]
         return total
-"""
+```
 Running Time: O(n/2) = O(n) since the for loop is iterating over half of n elements in S
 
 ## R-3.25
-"""
+```
     def example3(S):
         n = len(S)
         total = 0
@@ -125,11 +125,11 @@ Running Time: O(n/2) = O(n) since the for loop is iterating over half of n eleme
             for x in range(1+j):
                 total += S[k]
         return total
-"""
+```
 Running Time: O(n^2) since there are two for loops iterating over n elements in S
 
 ## R-3.27
-"""
+```
     def example5(A, B):
         n = len(A)
         count = 0
@@ -139,7 +139,7 @@ Running Time: O(n^2) since there are two for loops iterating over n elements in 
             if B[i] == total:
                 count += 1
         return count
-"""
+```
 Running Time: O(n) since there is one for loop iterating over n elements in A, comparisons are O(1) time
 
 ## R-3.28
