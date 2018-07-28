@@ -103,9 +103,9 @@
             total += S[j]
         return total
 """
-# Running Time:O(S) since the for loop is iterating over S elements
+# Running Time:O(n) since the for loop is iterating over n elements in S
 
-# R-3.23
+# R-3.24
 """
     def example2(S):
         n = len(S)
@@ -114,4 +114,16 @@
             total += S[j]
         return total
 """
-# Running Time: O(S/2) = O(S) since the for loop is iterating over half of S elements
+# Running Time: O(n/2) = O(n) since the for loop is iterating over half of n elements in S
+
+# R-3.25
+"""
+    def example3(S):
+        n = len(S)
+        total = 0
+        for j in range(n):
+            for x in range(1+j):
+                total += S[k]
+        return total
+"""
+# Running Time: O(n^2) since there are two for loops iterating over n elements in S 
