@@ -141,3 +141,21 @@
         return count
 """
 # Running Time: O(n) since there is one for loop iterating over n elements in A, comparisons are O(1) time
+
+# R-3.28
+# 1 second = 10^6 microseconds
+# 1 minute = 60 seconds
+# 1 hour = 60 minutes
+# 1 day = 24 hours
+# 1 month = 30 days
+# 1 year = 12 months
+# 1 century = 100 years
+"""
+    f(n) | 1 second | 1 hour | 1 month | 1 century
+    -----|----------|--------|---------|----------
+    logn | 2^(10^6) | 72^(10^8) | 5184^(10^9) | 62208^(10^11)
+    n    | 10^6     | 36*10^8   | 2592*10^9   | 31104 * 10^11
+    nlogn| 62746    | 2258856 * 10^2 | 162637632 * 10^3 | 1.9516516 * 10^14
+    n^2  | 1000     | 36 * 10^5 | 2592 * 10^6 | 31104 * 10^8
+    2^n  | ~20      | 72000  | 5184 * 10^3 | 62208 * 10^6
+"""
