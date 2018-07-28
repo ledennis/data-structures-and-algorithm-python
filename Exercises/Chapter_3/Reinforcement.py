@@ -167,3 +167,10 @@
 # R-3.30
 # Executes O(n) time calculation for each on logn random elements S
 # Worst case running time = O(nlogn)
+
+
+# R-3.31
+# Executes O(n) time calculation for each even number in S
+# Executes O(logn) time calculation for each odd number in S
+# Worst case running time = O(n^2) if each number is even
+# Best case running time = O(nlogn) if each number is odd
