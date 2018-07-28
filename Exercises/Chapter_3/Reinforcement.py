@@ -126,4 +126,17 @@
                 total += S[k]
         return total
 """
-# Running Time: O(n^2) since there are two for loops iterating over n elements in S 
+# Running Time: O(n^2) since there are two for loops iterating over n elements in S
+
+# R-3.26
+"""
+    def example4(S):
+        n = len(S)
+        prefix = 0
+        total = 0
+        for j in range(n):
+            prefix += S[j]
+            total += prefix
+        return total
+"""
+# Running Time: O(n) since there is one for loop iterating over n elements in S 
