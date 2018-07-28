@@ -10,3 +10,10 @@ Efficient algorithm for finding ten largest elements in sequence of size n.
 Sort n using quicksort, which takes up to O(nlogn) time
 Return last ten elements
 Running time is O(nlogn)
+
+## C-3.37
+Example of positive function f(n) such that f(n) is neither O(n) nor bigOmega(n)
+O(n): f(n) <= cf(n)
+bOmega(n): f(n) >= cf(n)
+Neither: f(n) = n^2 when n is even, therefore breaks O(n) since f(n) = n^2 > O(n)
+         f(n) = 0 when n is odd, therefore breaks bigOmega(n) since f(n) = 0 < O(n)
