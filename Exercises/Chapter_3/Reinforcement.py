@@ -159,3 +159,7 @@
     n^2  | 1000     | 36 * 10^5 | 2592 * 10^6 | 31104 * 10^8
     2^n  | ~20      | 72000  | 5184 * 10^3 | 62208 * 10^6
 """
+
+# R-3.29
+# Executes an O(logn) computation for each entry in n-element sequence
+# Worst-case running time = O(nlogn)
