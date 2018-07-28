@@ -185,3 +185,12 @@
 # Bob = O(n^2)
 # Al's algorithm is faster as n approches infinity but for small inputs of n, Bob's will be faster.
 # We are mostly interested in Big O for the "big picture" scenarios, which is beneficial for creating algorithms that scale.
+
+# R-3.34
+# City with inhabitants who only enjoy a meal if it is the best meal they have had in their lives.
+# Worst Case per Inhabitant: Only enjoy their first meal
+# Best Case: Assuming an inhabitant eats 3 meals per day, and that each meal is the best they have ever had, with
+# an average human lifespon of 79 years, a person will have 3 meals * 365 days * 79 years = 86,505 meal enjoyments.
+# Average Case: Assuming a uniform distribution where each meal has a %50 chance of being the best meal, then
+# on average there is 43,252.5 enjoyments, but if each meal has an equal chance to be worse, as good, better than the
+# best meal, then there is 28,835 enjoyments.
