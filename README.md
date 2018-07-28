@@ -2,3 +2,4 @@
 ## [Set](https://quizlet.com/le_dennis/folders/data-structures-and-algorithms-in-python/sets)
 ## [Chapter 1](https://quizlet.com/303204223/chapter-1-flash-cards/)
 ## [Chapter 2](https://quizlet.com/304333609/chapter-2-flash-cards/)
+## [Chapter 3](https://quizlet.com/305338239/chapter-3-flash-cards/)
