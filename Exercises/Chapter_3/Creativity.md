@@ -41,3 +41,11 @@ For each n, there is a comparison to the min, max, and possibly another comparis
 Since it is divide and conquer, each element will only be compared to n/2 elements.
 Three comparisons for each n and on n/2 elements equates to 3n/2 comparisons.
 Also, since the first two elements are only compared once, there are 3n/2 - 2 comparisons.
+
+## C-3.42
+Bob has 1 to n friends and each friend is allowed to visit i times, which could be different from others.
+Counter C that keeps track of the total number of visits to the site. Minimum value of C to know that
+a friend has reached his/her max.
+Minimum value of C is (sum of i - 1) + 1.
+The argument is that each friend can have up to i - 1 visit without reaching i number of visits, afterwards, if
+one there is one more visit, we know that one friend has reached his/her limit. 
