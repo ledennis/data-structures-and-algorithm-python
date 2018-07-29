@@ -32,3 +32,12 @@ Prove logbf(n) is O(logf(n)) and bOmega(logf(n))
 Assuming logf(n) is log base 2, then logbf(n) where b = 1, is O(logf(n))
 Assuming logf(n) is log base 2, then logbf(n) where b = 3, is bOmega(logf(n))
 Therefore logbf(n) is bTheta(logf(n))
+
+## C-3.41
+Find min and max of n numbers using 3n/2 comparisons.
+First compare the first two numbers of n to determine min and max.
+Afterwards, use divide and conquer to find min and max of both sides.
+For each n, there is a comparison to the min, max, and possibly another comparison to min or max respectively.
+Since it is divide and conquer, each element will only be compared to n/2 elements.
+Three comparisons for each n and on n/2 elements equates to 3n/2 comparisons.
+Also, since the first two elements are only compared once, there are 3n/2 - 2 comparisons.
