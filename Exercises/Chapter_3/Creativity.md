@@ -48,4 +48,12 @@ Counter C that keeps track of the total number of visits to the site. Minimum va
 a friend has reached his/her max.
 Minimum value of C is (sum of i - 1) + 1.
 The argument is that each friend can have up to i - 1 visit without reaching i number of visits, afterwards, if
-one there is one more visit, we know that one friend has reached his/her limit. 
+one there is one more visit, we know that one friend has reached his/her limit.
+
+## C-3.43
+Draw Proposition 3.3, for when n is odd
+For any integer n >= 1, we have:
+1 + 2 + 3 + ... + (n-2) + (n-1) + n = n(n+1)/2 operations
+Can't draw on her but should be similar to Figure 3.3 (b)
+A rectangle with base n/2 and up to n+1 height? (Unsure)
+ 
