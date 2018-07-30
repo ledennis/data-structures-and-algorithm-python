@@ -56,4 +56,14 @@ For any integer n >= 1, we have:
 1 + 2 + 3 + ... + (n-2) + (n-1) + n = n(n+1)/2 operations
 Can't draw on her but should be similar to Figure 3.3 (b)
 A rectangle with base n/2 and up to n+1 height? (Unsure)
- 
+
+## C-3.44
+No efficient algorithm for factoring a large prime number
+r = p * q, where r is a number, q is a key/large prime number, and p is the secret message/large prime number
+```
+for p in range(2,r):
+  if r % p == 0:
+    return 'The secret message is p!'
+```
+(a). Worst case to decipher secret message p if the transmitted message r has 100 bits,
+where one division takes 1 microsecond? O(r-2) running time
