@@ -78,3 +78,18 @@ and there are O(n) operations, running time is O(n2^(4n))
 ## C-3.45
 Since numbers are unique and are in range [0, n-1], that means that any number > n-1 is not in S.
 Running time is O(n), since there can be up to n comparisons against n-1.
+
+## C-3.46
+Base case: One sheep is the color of itself.
+Al states that if one sheep is taken out, the remaining n-1 sheep are the same color by induction. This is false
+since if the base case builds on itself, it only implies that each sheep is their own color, not that they are the
+same color.
+
+## C-3.47
+Base case n=0
+There are 0 intersection points
+Induction Step:
+Assuming no two lines are parallel and no three meet in the same point. Suppose we have n + 1 lines then, removing one
+would have n^2 intersection points. That means that the line that we removed must intersect all other n lines, since
+it is not parallel to any lines and no three lines can meet at the same point. Meaning we added n intersection points.
+n + 1 = n^2 + n intersection points, which is still n^2, so by induction, there are Theta(n^2) points.
