@@ -71,4 +71,6 @@ Each number is represented in 2^n bits. For the worst case, we assume that p and
 find q first if q < p, or p first if p < q in length. We can say that p is m/2 length, where m is the size of r.
 Therefore the running time is O(2^(m/2)) to find p.
 Assuming m = 80, it would take 10^-6 * 2^(50 / 2) ~= 1099511 seconds ~= 12.7 days
-(b).
+(b). Number of bits in r is log_base2_ofr
+Since m is the size of r, 2^(log_base2_ofr/2) = 2^(4(log_base2_ofr)/8) = 2^(4n)
+and there are O(n) operations, running time is O(n2^(4n))
