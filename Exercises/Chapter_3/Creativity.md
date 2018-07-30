@@ -74,3 +74,7 @@ Assuming m = 80, it would take 10^-6 * 2^(50 / 2) ~= 1099511 seconds ~= 12.7 day
 (b). Number of bits in r is log_base2_ofr
 Since m is the size of r, 2^(log_base2_ofr/2) = 2^(4(log_base2_ofr)/8) = 2^(4n)
 and there are O(n) operations, running time is O(n2^(4n))
+
+## C-3.45
+Since numbers are unique and are in range [0, n-1], that means that any number > n-1 is not in S.
+Running time is O(n), since there can be up to n comparisons against n-1.
