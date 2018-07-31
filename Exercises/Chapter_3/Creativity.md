@@ -93,3 +93,7 @@ Assuming no two lines are parallel and no three meet in the same point. Suppose 
 would have n^2 intersection points. That means that the line that we removed must intersect all other n lines, since
 it is not parallel to any lines and no three lines can meet at the same point. Meaning we added n intersection points.
 n + 1 = n^2 + n intersection points, which is still n^2, so by induction, there are Theta(n^2) points.
+
+## C-3.48
+The incorrect part of the induction step was to say that F(n-2) is O(n-2) and F(n-1) is O(n-1). There is nothing to
+support this claim.
