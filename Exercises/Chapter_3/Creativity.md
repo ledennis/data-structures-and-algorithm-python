@@ -115,3 +115,13 @@ for i in range(n):
   sum += i(x^i)
 Not sure how this is O(n^2), since its done in one for loop, even with the coefficient and exponent being separate ...
 (b). N/A
+
+## C-3.51
+Show summation i=1 to n, logi is O(nlogn)
+f(n) <= O(nlogn)
+Base case: n = 1
+log1 <= 1log1
+Induction Step:
+f(n + 1)  = f(n) + f(n-1)
+f(n) <= nlogn, f(n-1) <= (n-1)log(n-1)
+f(n + 1) = nlogn + (n-1)log(n-1) <= nlogn + nlogn = 2nlogn   
