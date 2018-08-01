@@ -107,10 +107,11 @@ Induction Step: F(n + 1) >= (3/2)^n
 By Assumption:  F(n) >= (3/2)^n, F(n - 1) >= (3/2)^(n - 1)
 And So:         F(n + 1) = (3/2)^n + (3/2)^(n - 1) >= (3/2)^(n+1)
 
-## C-3.50
+## C-3.50 (incomplete since I'm unsure of how to look at this problem.)
 Let p(x) be a polynomial of degree n, that is, p(x) = sum i=0 .. n of asubix^i
 (a).
 sum = 0
 for i in range(n):
   sum += i(x^i)
 Not sure how this is O(n^2), since its done in one for loop, even with the coefficient and exponent being separate ...
+(b). N/A
