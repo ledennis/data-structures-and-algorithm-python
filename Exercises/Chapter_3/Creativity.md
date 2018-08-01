@@ -98,7 +98,7 @@ n + 1 = n^2 + n intersection points, which is still n^2, so by induction, there 
 The incorrect part of the induction step was to say that F(n-2) is O(n-2) and F(n-1) is O(n-1). There is nothing to
 support this claim.
 
-## C-3.49
+## C-3.49 (Probably Done Wrong)
 Show that F(n) is Omega((3/2)^n)
 Prove F(n) >= O((3/2)^n)
 Base Case: n = 1, 2   (3/2)^1 = 3/2 > 1, (3/2)^2 = 9/4 > 2
@@ -106,3 +106,11 @@ Induction Step: F(n + 1) >= (3/2)^n
                 F(n + 1) = F(n) + F(n - 1)
 By Assumption:  F(n) >= (3/2)^n, F(n - 1) >= (3/2)^(n - 1)
 And So:         F(n + 1) = (3/2)^n + (3/2)^(n - 1) >= (3/2)^(n+1)
+
+## C-3.50
+Let p(x) be a polynomial of degree n, that is, p(x) = sum i=0 .. n of asubix^i
+(a).
+sum = 0
+for i in range(n):
+  sum += i(x^i)
+Not sure how this is O(n^2), since its done in one for loop, even with the coefficient and exponent being separate ...
