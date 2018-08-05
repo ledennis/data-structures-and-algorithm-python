@@ -124,12 +124,8 @@ log1 <= 1log1
 Induction Step:
 f(n + 1)  = f(n) + f(n-1)
 f(n) <= nlogn, f(n-1) <= (n-1)log(n-1)
-<<<<<<< HEAD
 f(n + 1) = nlogn + (n-1)log(n-1) <= nlogn + nlogn = 2nlogn  
 
 ## C-3.52 (unattempted)
 ## C-3.53 (unattempted)
 ## C-3.54 (unattempted)
-=======
-f(n + 1) = nlogn + (n-1)log(n-1) <= nlogn + nlogn = 2nlogn   
->>>>>>> cf8fa57219a9732563b68329951903788326e051
