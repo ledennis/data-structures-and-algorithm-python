@@ -80,3 +80,19 @@ power(2, 1)
 return 1
 |
 power(2, 0)
+
+## R-4.4
+```
+def reverse(S, starts, stop):
+  if start < stop - 1:
+    S[start], S[stop-1] = S[stop-1], S[start]
+    reverse(S, start+1, stop-1)
+```
+reverse(S, 0, 5) on S=[4,3,6,2,6]
+[6,2,6,3,4] <- end
+^
+|
+[6,3,6,2,4]
+^
+|
+[4,3,6,2,6] <- start
