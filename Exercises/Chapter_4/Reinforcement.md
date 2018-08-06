@@ -42,3 +42,41 @@ power(2, 1)
 return 1
 |
 power(2, 0)
+
+## R-4.3
+```
+def power(x, n):
+  if n == 0:
+    return 1
+  else:
+    partial = power(x, n//2)
+    result = partial * partial
+    if n % 2 == 1:
+      result *= x
+    return result
+```
+Recursion trace of power(2, 18)
+^
+return 512 * 512 = 262144
+|
+power(2, 18)
+^
+return 16 * 16 * 2 = 512
+|
+power(2, 9)
+^
+return 4 * 4 = 16
+|
+power(2, 4)
+^
+return 2 * 2 = 4
+|
+power(2, 2)
+^
+return 1 * 1 * 2 = 2
+|
+power(2, 1)
+^
+return 1
+|
+power(2, 0)
