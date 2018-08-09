@@ -140,3 +140,12 @@ def harmonicNum(k):
   else:
     return 1/k + harmonicNum(k-1)
 ```
+
+## R-4.7
+```
+def stringToDigit(k):
+  if int(k) // 10 == 0:
+    return int(k)
+  else:
+    return int(k[0])*(10**(len(k)-1)) + stringToDigit(k[1:])
+```
