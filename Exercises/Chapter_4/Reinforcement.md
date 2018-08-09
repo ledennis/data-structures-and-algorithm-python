@@ -131,3 +131,12 @@ PuzzleSolve(1, S=[a,c], U=[b,d]) = acb, acd
 PuzzleSolve(1, S=[a,b], U=[c,d]) = abc, abd
 PuzzleSolve(2, S=[a], U=[b,c,d])
 PuzzleSolve(3, S, U), S = [], U = [a, b, c, d]
+
+## R-4.6
+```
+def harmonicNum(k):
+  if k == 1:
+    return 1
+  else:
+    return 1/k + harmonicNum(k-1)
+```
