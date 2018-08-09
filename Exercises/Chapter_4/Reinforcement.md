@@ -149,3 +149,16 @@ def stringToDigit(k):
   else:
     return int(k[0])*(10**(len(k)-1)) + stringToDigit(k[1:])
 ```
+
+## R-4.8
+__Isabel's Algorithm__
+```
+def sumSequence(A):
+  B = [0] * len(A)//2
+  B[i] = A[2i] + A[2i+1], for i = 0,1 ... (n/2)-1
+  if len(B) == 1:
+    return B[0]
+  else:
+    sumSequence(B)
+```
+Running time is O(n^2) since there is n/2 summations * n accesses to the array.
