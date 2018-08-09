@@ -96,3 +96,38 @@ reverse(S, 0, 5) on S=[4,3,6,2,6]
 ^
 |
 [4,3,6,2,6] <- start
+
+## R-4.5
+```
+def PuzzleSolve(k, S, U):
+  for each e in U do:
+    add e to the end of S
+    remove e from U
+    if k==1 then:
+      Test whether S is a configuration that solves the puzzle
+      if S solves the puzzle then:
+        return "Solution found: " S
+    else:
+      PuzzleSolve(k-1, S, U)
+    Remove e from the end of S
+    Add e back to U
+```
+PuzzleSolve(3, S, U), where S is empty and U={a,b,c,d}
+
+PuzzleSolve(1, S=[d,c], U=[a,b]) = dca, dcb
+PuzzleSolve(1, S=[d,b], U=[a,c]) = dba, dbc
+PuzzleSolve(1, S=[d,a], U=[b,c]) = dab, dac
+PuzzleSolve(2, S=[d], U=[a,b,c])
+PuzzleSolve(1, S=[c,d], U=[a,b]) = cda, cdb
+PuzzleSolve(1, S=[c,b], U=[a,d]) = cba, cbd
+PuzzleSolve(1, S=[c,a], U=[b,d]) = cab, cad
+PuzzleSolve(2, S=[c], U=[a,b,d])
+PuzzleSolve(1, S=[b,d], U=[a,c]) = bda, bdc
+PuzzleSolve(1, S=[b,c], U=[a,d]) = bca, bcd
+PuzzleSolve(1, S=[b,a], U=[c,d]) = bac, bad
+PuzzleSolve(2, S=[b], U=[a,c,d])
+PuzzleSolve(1, S=[a,d], U=[b,c]) = adb, adc
+PuzzleSolve(1, S=[a,c], U=[b,d]) = acb, acd
+PuzzleSolve(1, S=[a,b], U=[c,d]) = abc, abd
+PuzzleSolve(2, S=[a], U=[b,c,d])
+PuzzleSolve(3, S, U), S = [], U = [a, b, c, d]
