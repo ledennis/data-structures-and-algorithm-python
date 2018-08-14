@@ -37,6 +37,19 @@ def unique(S, el):
             count+=1
     return count == 1
 
+# C-4.12
+def product(X, Y, prod=0):
+    if X == 0 or Y == 0:
+        return 0
+    if X == 1:
+        return prod + Y
+    elif X == -1:
+        return prod - Y
+    elif X > 1:
+        return product(X-1, Y, prod+Y)
+    else:
+        return product(X+1, Y, prod-Y)
+
 if __name__ == '__main__':
     # C-4.9
     A = [1,2,3,4,5]
@@ -65,3 +78,11 @@ if __name__ == '__main__':
     print(unique3(C))
     print(unique3(D))
     print(unique3(F))
+
+    # C-4.12
+    print(product(1,5))
+    print(product(5,1))
+    print(product(25,5))
+    print(product(-25,5))
+    print(product(25,-5))
+    print(product(-25,-5))
