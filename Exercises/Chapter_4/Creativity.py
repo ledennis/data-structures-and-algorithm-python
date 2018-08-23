@@ -130,6 +130,28 @@ def is_palindrome_helper(string, length=0):
         length += 1
         return is_palindrome_helper(string, length)
 
+# C-4.18
+def vowels_vs_consonants(string):
+    return vowels_vs_consonants_helper(string)
+
+def vowels_vs_consonants_helper(string, length=0, vowel_count=0, consonant_count=0):
+    if length == len(string):
+        return vowel_count > consonant_count
+    elif vowel_count > len(string) - length:
+        print('Found early')
+        return True
+    elif consonant_count > len(string) - length:
+        print('Found early')
+        return False
+    else:
+        vowels = ['a', 'e', 'i', 'o', 'u']
+        letter = string[length]
+        if letter in vowels:
+            vowel_count += 1
+        else:
+            consonant_count += 1
+        length += 1
+        return vowels_vs_consonants_helper(string, length, vowel_count, consonant_count)
 
 if __name__ == '__main__':
     # # C-4.9
@@ -182,9 +204,17 @@ if __name__ == '__main__':
     # print(reverse(string))
 
     # C-4.17
+    # string_one = 'pots&pans'
+    # string_two = 'racecar'
+    # string_three = 'gohangasalamiimalasagnahog'
+    # print(is_palindrome(string_one))
+    # print(is_palindrome(string_two))
+    # print(is_palindrome(string_three))
+
+    # C-4.18
     string_one = 'pots&pans'
-    string_two = 'racecar'
-    string_three = 'gohangasalamiimalasagnahog'
-    print(is_palindrome(string_one))
-    print(is_palindrome(string_two))
-    print(is_palindrome(string_three))
+    string_two = 'racear'
+    string_three = 'aeiouch'
+    print(vowels_vs_consonants(string_one))
+    print(vowels_vs_consonants(string_two))
+    print(vowels_vs_consonants(string_three))
