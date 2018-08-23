@@ -105,6 +105,18 @@ def subset_adder(element, subsets, length=0, sets=[]):
         length += 1
         return subset_adder(element, subsets, length, sets)
 
+# C-4.16
+def reverse(string):
+    return reverse_helper(string)
+
+def reverse_helper(string, length=0):
+    if length == len(string):
+        return string[len(string)-length-1]
+    else:
+        letter = string[len(string)-length-1]
+        length += 1
+        return letter + reverse_helper(string, length)
+
 
 if __name__ == '__main__':
     # # C-4.9
@@ -149,5 +161,9 @@ if __name__ == '__main__':
     # print(towerOfHanoi(4))
 
     # C-4.15
-    A = [1,2,3,4]
-    print(subset(A))
+    # A = [1,2,3,4]
+    # print(subset(A))
+
+    # C-4.16
+    string = 'pots&pans'
+    print(reverse(string))
