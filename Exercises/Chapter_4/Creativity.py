@@ -184,6 +184,27 @@ def pivot_helper(nums, pivot, length=0, before=[], after=[]):
         length+=1
         return pivot_helper(nums, pivot, length, before, after)
 
+# C-4.21
+def pair_sum(nums, k):
+    nums = [x for x in nums if x < k]
+    return pair_sum_helper(nums, k)
+
+def pair_sum_helper(nums, k, length=0):
+    if length == len(nums):
+        return False
+    else:
+        return pair_sum_finder(nums, k, length, length+1)
+
+def pair_sum_finder(nums, k, current, pair):
+    if pair >= len(nums):
+        return pair_sum_helper(nums, k, current+1)
+    else:
+        if nums[current] + nums[pair] == k:
+            return (nums[current], nums[pair])
+        else:
+            pair+=1
+            return pair_sum_finder(nums, k, current, pair)
+
 if __name__ == '__main__':
     # # C-4.9
     # A = [1,2,3,4,5]
@@ -251,12 +272,12 @@ if __name__ == '__main__':
     # print(vowels_vs_consonants(string_three))
 
     # C-4.19
-    nums_one = [4,1,2,3,7,8,10]
-    nums_two = [1,3,7,8,10,2]
-    nums_three = [8,10,2,1,3,7]
-    print(even_before_odd(nums_one))
-    print(even_before_odd(nums_two))
-    print(even_before_odd(nums_three))
+    # nums_one = [4,1,2,3,7,8,10]
+    # nums_two = [1,3,7,8,10,2]
+    # nums_three = [8,10,2,1,3,7]
+    # print(even_before_odd(nums_one))
+    # print(even_before_odd(nums_two))
+    # print(even_before_odd(nums_three))
 
     # C-4.20
     # nums_one = [4,1,2,3,7,8,10]
@@ -268,3 +289,9 @@ if __name__ == '__main__':
     # print(pivot(nums_two, 8))
     # print(pivot(nums_three, 1))
     # print(pivot(nums_three, 7))
+
+    # C-4.21
+    nums_one = [4,1,2,3,7,8,10]
+    print(pair_sum(nums_one, 11))
+    print(pair_sum(nums_one, 20))
+    print(pair_sum(nums_one, -20))
