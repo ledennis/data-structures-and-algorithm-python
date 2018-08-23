@@ -205,6 +205,17 @@ def pair_sum_finder(nums, k, current, pair):
             pair+=1
             return pair_sum_finder(nums, k, current, pair)
 
+# C-4.22
+def power_iterative(x, n):
+    if n == 0:
+        return 1
+    power = x
+    if n == 1:
+        return power
+    for i in range(1, n):
+        power *= x
+    return power
+
 if __name__ == '__main__':
     # # C-4.9
     # A = [1,2,3,4,5]
@@ -291,7 +302,10 @@ if __name__ == '__main__':
     # print(pivot(nums_three, 7))
 
     # C-4.21
-    nums_one = [4,1,2,3,7,8,10]
-    print(pair_sum(nums_one, 11))
-    print(pair_sum(nums_one, 20))
-    print(pair_sum(nums_one, -20))
+    # nums_one = [4,1,2,3,7,8,10]
+    # print(pair_sum(nums_one, 11))
+    # print(pair_sum(nums_one, 20))
+    # print(pair_sum(nums_one, -20))
+
+    # C-4.22
+    print(power_iterative(2, 4))
