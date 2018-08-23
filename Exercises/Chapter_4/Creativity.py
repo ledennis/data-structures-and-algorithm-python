@@ -82,6 +82,30 @@ def move(A, B):
 def empty(A):
     return len(A) == 0
 
+# C-4.15
+def subset(A):
+    return subset_helper(A)
+
+def subset_helper(A, subsets=[]):
+    if not A:
+        return set(subsets)
+    else:
+        element = A.pop()
+        subsets += subset_adder(element, subsets)
+        subset = tuple([element])
+        subsets.append(subset)
+        return subset_helper(A, subsets)
+
+def subset_adder(element, subsets, length=0, sets=[]):
+    if length == len(subsets):
+        return sets
+    else:
+        subset = (subsets[length] + tuple([element]))
+        sets.append(subset)
+        length += 1
+        return subset_adder(element, subsets, length, sets)
+
+
 if __name__ == '__main__':
     # # C-4.9
     # A = [1,2,3,4,5]
@@ -119,7 +143,11 @@ if __name__ == '__main__':
     # print(product(25,-5))
     # print(product(-25,-5))
 
-    # C-4.13
+    # C-4.14
     # print(towerOfHanoi(2))
     # print(towerOfHanoi(3))
-    print(towerOfHanoi(4))
+    # print(towerOfHanoi(4))
+
+    # C-4.15
+    A = [1,2,3,4]
+    print(subset(A))
