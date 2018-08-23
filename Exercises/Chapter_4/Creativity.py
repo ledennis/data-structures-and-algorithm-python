@@ -170,6 +170,22 @@ def even_before_odd_helper(nums, length=0, evens=[], odds=[]):
         length+=1
         return even_before_odd_helper(nums, length, evens, odds)
 
+# C-4.20
+def pivot(nums, pivot):
+    ''' Runs in O(n) time since it checks compares n elements to pivot. '''
+    return pivot_helper(nums, pivot)
+
+def pivot_helper(nums, pivot, length=0, before=[], after=[]):
+    if length == len(nums):
+        return before + after
+    else:
+        if nums[length] <= pivot:
+            before = before + [nums[length]]
+        else:
+            after = after + [nums[length]]
+        length+=1
+        return pivot_helper(nums, pivot, length, before, after)
+
 if __name__ == '__main__':
     # # C-4.9
     # A = [1,2,3,4,5]
@@ -243,3 +259,14 @@ if __name__ == '__main__':
     # print(even_before_odd(nums_one))
     # print(even_before_odd(nums_two))
     # print(even_before_odd(nums_three))
+
+    # C-4.20
+    nums_one = [4,1,2,3,7,8,10]
+    nums_two = [1,3,7,8,10,2]
+    nums_three = [8,10,2,1,3,7]
+    print(pivot(nums_one, 5))
+    print(pivot(nums_one, 7))
+    print(pivot(nums_two, 2))
+    print(pivot(nums_two, 8))
+    print(pivot(nums_three, 1))
+    print(pivot(nums_three, 7))
