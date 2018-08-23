@@ -153,6 +153,23 @@ def vowels_vs_consonants_helper(string, length=0, vowel_count=0, consonant_count
         length += 1
         return vowels_vs_consonants_helper(string, length, vowel_count, consonant_count)
 
+# C-4.19
+def even_before_odd(nums):
+    evens = []
+    odds = []
+    return even_before_odd_helper(nums, evens=evens, odds=odds)
+
+def even_before_odd_helper(nums, length=0, evens=[], odds=[]):
+    if length == len(nums):
+        return evens + odds
+    else:
+        if nums[length]%2 == 0:
+            evens.append(nums[length])
+        else:
+            odds.append(nums[length])
+        length+=1
+        return even_before_odd_helper(nums, length, evens, odds)
+
 if __name__ == '__main__':
     # # C-4.9
     # A = [1,2,3,4,5]
@@ -212,9 +229,17 @@ if __name__ == '__main__':
     # print(is_palindrome(string_three))
 
     # C-4.18
-    string_one = 'pots&pans'
-    string_two = 'racear'
-    string_three = 'aeiouch'
-    print(vowels_vs_consonants(string_one))
-    print(vowels_vs_consonants(string_two))
-    print(vowels_vs_consonants(string_three))
+    # string_one = 'pots&pans'
+    # string_two = 'racear'
+    # string_three = 'aeiouch'
+    # print(vowels_vs_consonants(string_one))
+    # print(vowels_vs_consonants(string_two))
+    # print(vowels_vs_consonants(string_three))
+
+    # C-4.19
+    # nums_one = [4,1,2,3,7,8,10]
+    # nums_two = [1,3,7,8,10,2]
+    # nums_three = [8,10,2,1,3,7]
+    # print(even_before_odd(nums_one))
+    # print(even_before_odd(nums_two))
+    # print(even_before_odd(nums_three))
