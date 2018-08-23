@@ -117,6 +117,19 @@ def reverse_helper(string, length=0):
         length += 1
         return letter + reverse_helper(string, length)
 
+# C-4.17
+def is_palindrome(string):
+    return is_palindrome_helper(string)
+
+def is_palindrome_helper(string, length=0):
+    if length >= len(string)//2:
+        return True
+    else:
+        if string[length] != string[len(string)-length-1]:
+            return False
+        length += 1
+        return is_palindrome_helper(string, length)
+
 
 if __name__ == '__main__':
     # # C-4.9
@@ -165,5 +178,13 @@ if __name__ == '__main__':
     # print(subset(A))
 
     # C-4.16
-    string = 'pots&pans'
-    print(reverse(string))
+    # string = 'pots&pans'
+    # print(reverse(string))
+
+    # C-4.17
+    string_one = 'pots&pans'
+    string_two = 'racecar'
+    string_three = 'gohangasalamiimalasagnahog'
+    print(is_palindrome(string_one))
+    print(is_palindrome(string_two))
+    print(is_palindrome(string_three))
